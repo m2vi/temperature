@@ -22,7 +22,7 @@ const Main = ({ unit }) => {
     <>
       <Wrapput className='mb-5'>
         <Digiput title='Base'>{Units[mainUnit]}</Digiput>
-        <Mainput title='Number System' onChange={handleChange} placeholder={capitalize(mainUnit)} type='number' defaultValue='0' />
+        <Mainput title='Symbol or sth' onChange={handleChange} placeholder={capitalize(mainUnit)} type='number' defaultValue='0' />
         <Buttput style={{ pointerEvents: 'none' }} />
       </Wrapput>
       {otherUnits.map((unit) => {
@@ -30,7 +30,7 @@ const Main = ({ unit }) => {
           <Wrapput key={unit}>
             <Digiput title='Base'>{Units[unit]}</Digiput>
             <Mainput
-              title='Number System'
+              title='Unit'
               placeholder={capitalize(unit)}
               readOnly={true}
               value={Math.round((temperature(value).from(Units.kelvin).to(Units[unit]) + Number.EPSILON) * 100) / 100}
